@@ -1,18 +1,11 @@
 package model.entity;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.Period;
-import java.time.format.DateTimeFormatter;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
@@ -36,6 +29,10 @@ public class Cita  {
 
     @JoinColumn(name = "Factura_ID")
     private int facturaid;
+    
+	// se crea el constructor vacio
+	public Cita() {
+	}
 
 	public int getId() {
 		return id;

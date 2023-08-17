@@ -1,18 +1,11 @@
 package model.entity;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.Period;
-import java.time.format.DateTimeFormatter;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
@@ -72,7 +65,6 @@ public class Doctor  {
 			return false; // El nombre es inválido
 		}
 	}
-
 	
 	// se crea metodo toString
 	public String toString() {

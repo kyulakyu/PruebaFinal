@@ -1,11 +1,5 @@
 package model.entity;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.Period;
-import java.time.format.DateTimeFormatter;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -65,7 +59,6 @@ public class Especialidad  {
 			return false; // El nombre es inválido
 		}
 	}
-
 	
 	// se crea metodo toString
 	public String toString() {

@@ -102,4 +102,12 @@ public class Paciente  {
 		int edad = periodo.getYears();
 		System.out.println("El Paciente tiene " + edad + " años");
 	}
+	
+    public int calcularEdad() {
+        LocalDate fechaNac = LocalDate.parse(fechaNacimiento, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+        LocalDate ahora = LocalDate.now();
+        Period periodo = Period.between(fechaNac, ahora);
+        return periodo.getYears();
+    }
+
 }

@@ -1,34 +1,27 @@
 package model.entity;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.Period;
-import java.time.format.DateTimeFormatter;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
 @Entity
-@Table(name="historia_clinica")
-public class Historia  {
+@Table(name="Historia_Clinica")
+public class Historial  {
 	// se crean los atributos de la clase Usuario
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @JoinColumn(name = "Paciente_ID")
-    private int pacienteid;
+    private int pacienteId;
 
     @JoinColumn(name = "Doctor_ID")
-    private int doctorid;
+    private int doctorId;
 
     @Column(name = "Fecha_Cita")
     private String fechaCita;
@@ -36,6 +29,11 @@ public class Historia  {
     private String sintomas;
     private String diagnostico;
     private String tratamiento;
+    
+	// se crea el constructor vacio
+	public Historial() {
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -43,16 +41,16 @@ public class Historia  {
 		this.id = id;
 	}
 	public int getPacienteid() {
-		return pacienteid;
+		return pacienteId;
 	}
 	public void setPacienteid(int pacienteid) {
-		this.pacienteid = pacienteid;
+		this.pacienteId = pacienteid;
 	}
 	public int getDoctorid() {
-		return doctorid;
+		return doctorId;
 	}
 	public void setDoctorid(int doctorid) {
-		this.doctorid = doctorid;
+		this.doctorId = doctorid;
 	}
 	public String getFechaCita() {
 		return fechaCita;

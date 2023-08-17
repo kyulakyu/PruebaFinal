@@ -204,6 +204,11 @@
 			<version>2.14.2</version>
 		</dependency>
 
+		<dependency>
+			<groupId>control.asistencia</groupId>
+			<artifactId>control.asistencia</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
     </dependencies>
 
     <build>
