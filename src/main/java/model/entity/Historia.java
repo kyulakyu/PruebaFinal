@@ -24,11 +24,9 @@ public class Historia  {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @ManyToOne
     @JoinColumn(name = "Paciente_ID")
     private int pacienteid;
 
-    @ManyToOne
     @JoinColumn(name = "Doctor_ID")
     private int doctorid;
 

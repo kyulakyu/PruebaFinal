@@ -26,8 +26,7 @@ public class Doctor  {
 	private int id;
 	
 	private String nombre;
-	
-    @ManyToOne
+
     @JoinColumn(name = "Especialidad_ID")
 	private int especialidadId;
     

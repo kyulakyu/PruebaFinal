@@ -24,17 +24,16 @@ public class Cita  {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column (name="id")
 	private int id;
-    @ManyToOne
+	
     @JoinColumn(name = "Paciente_ID")
     private int pacienteid;
 
-    @ManyToOne
+
     @JoinColumn(name = "Doctor_ID")
     private int doctorid;
 
     private String fecha;
 
-    @ManyToOne
     @JoinColumn(name = "Factura_ID")
     private int facturaid;
 
