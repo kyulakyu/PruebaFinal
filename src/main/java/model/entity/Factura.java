@@ -1,5 +1,6 @@
 package model.entity;
 
+import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -11,6 +12,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
@@ -24,82 +27,25 @@ public class Factura  {
 	private int id;
 	private BigDecimal monto;
 	private String fechaNacimiento;
-	
-	// se crea el constructor vacio
-	public Factura() {
-	}
-
-	public Factura(int id) {
-		this.id = id;
-	}
-	
-	public Factura(String nombre) {
-		this.nombre = nombre;
-	}
-	
-	// se crea el constructor con todos los atributos de la clase
-	public Factura(int id, String nombre, String fechaNacimiento) {
-		this.id = id;
-		this.nombre = nombre;
-		this.fechaNacimiento = fechaNacimiento;
-	}
-
-	// se crean los metodos de acceso y modificadores de yodos los atributos
 	public int getId() {
 		return id;
 	}
-
 	public void setId(int id) {
 		this.id = id;
 	}
-	
-	public String getNombre() {
-		return nombre;
-
+	public BigDecimal getMonto() {
+		return monto;
 	}
-
-	public boolean setNombre(String nombre) {
-		this.nombre = nombre;
-		if (nombre != null && !nombre.isEmpty()) {
-			return true; // El nombre se estableció correctamente
-		} else {
-			return false; // El nombre es inválido
-		}
+	public void setMonto(BigDecimal monto) {
+		this.monto = monto;
 	}
-
 	public String getFechaNacimiento() {
 		return fechaNacimiento;
 	}
-
-	public boolean setFechaNacimiento(String fechaNacimiento) {
-	    if (fechaNacimiento == null) {
-	        return false; // La fecha es nula, formato incorrecto
-	    }
-
-	    String formatoFecha = "dd/MM/yyyy";
-	    SimpleDateFormat sdf = new SimpleDateFormat(formatoFecha);
-	    sdf.setLenient(false); // Evita la flexibilidad en el análisis de fechas
-
-	    try {
-	        sdf.parse(fechaNacimiento);
-	        this.fechaNacimiento = fechaNacimiento;
-	        return true; // La fecha tiene el formato correcto y fue establecida correctamente
-	    } catch (ParseException e) {
-	        return false; // La fecha no tiene el formato correcto
-	    }
+	public void setFechaNacimiento(String fechaNacimiento) {
+		this.fechaNacimiento = fechaNacimiento;
 	}
+	
 
-	// se crea metodo toString
-	public String toString() {
-		return "Factura [nombre=" + nombre + ", fechaDeNacimiento=" + fechaNacimiento + "]";
-	}
-
-	public void mostrarEdad() {
-
-		LocalDate fechaNac = LocalDate.parse(fechaNacimiento, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-		LocalDate ahora = LocalDate.now();
-		Period periodo = Period.between(fechaNac, ahora);
-		int edad = periodo.getYears();
-		System.out.println("El Factura tiene " + edad + " años");
-	}
+	
 }

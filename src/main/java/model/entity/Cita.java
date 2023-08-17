@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
@@ -36,27 +38,6 @@ public class Cita  {
     @JoinColumn(name = "Factura_ID")
     private int facturaid;
 
-	
-	// se crea el constructor vacio
-	public Paciente() {
-	}
-
-	public Paciente(int id) {
-		this.id = id;
-	}
-	
-	public Paciente(String nombre) {
-		this.nombre = nombre;
-	}
-	
-	// se crea el constructor con todos los atributos de la clase
-	public Paciente(int id, String nombre, String fechaNacimiento) {
-		this.id = id;
-		this.nombre = nombre;
-		this.fechaNacimiento = fechaNacimiento;
-	}
-
-	// se crean los metodos de acceso y modificadores de yodos los atributos
 	public int getId() {
 		return id;
 	}
@@ -64,54 +45,38 @@ public class Cita  {
 	public void setId(int id) {
 		this.id = id;
 	}
-	
-	public String getNombre() {
-		return nombre;
 
+	public int getPacienteid() {
+		return pacienteid;
 	}
 
-	public boolean setNombre(String nombre) {
-		this.nombre = nombre;
-		if (nombre != null && !nombre.isEmpty()) {
-			return true; // El nombre se estableció correctamente
-		} else {
-			return false; // El nombre es inválido
-		}
+	public void setPacienteid(int pacienteid) {
+		this.pacienteid = pacienteid;
 	}
 
-	public String getFechaNacimiento() {
-		return fechaNacimiento;
+	public int getDoctorid() {
+		return doctorid;
 	}
 
-	public boolean setFechaNacimiento(String fechaNacimiento) {
-	    if (fechaNacimiento == null) {
-	        return false; // La fecha es nula, formato incorrecto
-	    }
-
-	    String formatoFecha = "dd/MM/yyyy";
-	    SimpleDateFormat sdf = new SimpleDateFormat(formatoFecha);
-	    sdf.setLenient(false); // Evita la flexibilidad en el análisis de fechas
-
-	    try {
-	        sdf.parse(fechaNacimiento);
-	        this.fechaNacimiento = fechaNacimiento;
-	        return true; // La fecha tiene el formato correcto y fue establecida correctamente
-	    } catch (ParseException e) {
-	        return false; // La fecha no tiene el formato correcto
-	    }
+	public void setDoctorid(int doctorid) {
+		this.doctorid = doctorid;
 	}
 
-	// se crea metodo toString
-	public String toString() {
-		return "Paciente [nombre=" + nombre + ", fechaDeNacimiento=" + fechaNacimiento + "]";
+	public String getFecha() {
+		return fecha;
 	}
 
-	public void mostrarEdad() {
-
-		LocalDate fechaNac = LocalDate.parse(fechaNacimiento, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-		LocalDate ahora = LocalDate.now();
-		Period periodo = Period.between(fechaNac, ahora);
-		int edad = periodo.getYears();
-		System.out.println("El Paciente tiene " + edad + " años");
+	public void setFecha(String fecha) {
+		this.fecha = fecha;
 	}
+
+	public int getFacturaid() {
+		return facturaid;
+	}
+
+	public void setFacturaid(int facturaid) {
+		this.facturaid = facturaid;
+	}
+
+    
 }

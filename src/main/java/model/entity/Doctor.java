@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
@@ -35,31 +37,6 @@ public class Doctor  {
 	public Doctor() {
 	}
 
-	public Doctor(int id) {
-		this.id = id;
-	}
-	
-	public Doctor(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public Doctor(int especialidadId) {
-		this.especialidadId = especialidadId;
-	}
-	
-	public Doctor(int experiencia) {
-		this.experiencia = experiencia;
-	}
-	
-	// se crea el constructor con todos los atributos de la clase
-	public Doctor(int id, String nombre, int especialidadId, int experiencia) {
-		this.id = id;
-		this.nombre = nombre;
-		this.especialidadId = especialidadId;
-		this.experiencia = experiencia;
-	}
-
-	// se crean los metodos de acceso y modificadores de yodos los atributos
 	public int getId() {
 		return id;
 	}
@@ -67,10 +44,25 @@ public class Doctor  {
 	public void setId(int id) {
 		this.id = id;
 	}
-	
+
+	public int getEspecialidadId() {
+		return especialidadId;
+	}
+
+	public void setEspecialidadId(int especialidadId) {
+		this.especialidadId = especialidadId;
+	}
+
+	public int getExperiencia() {
+		return experiencia;
+	}
+
+	public void setExperiencia(int experiencia) {
+		this.experiencia = experiencia;
+	}
+
 	public String getNombre() {
 		return nombre;
-
 	}
 
 	public boolean setNombre(String nombre) {
