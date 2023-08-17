@@ -1,8 +1,8 @@
 # PruebaFinal
 
-##Caso de Prueba
+## Caso de Prueba
 
-###Gestor de Inscripción y Datos de personas
+### Gestor de Inscripción y Datos de personas
 Un grupo Scout, solicita a la empresa en la que trabajas realizar una aplicación web
 para la gestión de una clínica de salud.
 Requisitos del Proyecto
@@ -10,7 +10,7 @@ Requisitos del Proyecto
 clínica de salud. Esta debe ser construida utilizando el framework Spring y las
 herramientas necesarias para establecer la comunicación con la Base de Datos en
 MySQL.
-###Requisitos técnicos
+### Requisitos técnicos
 • Utiliza el framework Spring MVC para el desarrollo de la aplicación.
 • Utiliza una base de datos MySQL para almacenar la información utilizando el código
 sql proporcionado.
